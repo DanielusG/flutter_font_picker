@@ -56,6 +56,7 @@ class _FontPickerUIState extends State<FontPickerUI> {
         .keys
         .where((e) => widget.googleFonts.contains(e))
         .toList();
+    await addToRecents("Roboto");
     setState(() {
       _recentFonts = recents.reversed
           .map((fontFamily) =>
@@ -74,6 +75,11 @@ class _FontPickerUIState extends State<FontPickerUI> {
     setState(() {
       widget.onFontChanged(selectedFont);
     });
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    if (mounted) super.setState(fn);
   }
 
   @override
