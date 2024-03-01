@@ -85,25 +85,11 @@ class _FontPickerUIState extends State<FontPickerUI> {
           Padding(
             padding:
                 const EdgeInsets.symmetric(vertical: 4.0, horizontal: 12.0),
-            child: widget.showInDialog
-                ? ListView(
-                    shrinkWrap: true,
-                    children: [
-                      FontSearch(
-                        onSearchTextChanged: onSearchTextChanged,
-                      ),
-                    ],
-                  )
-                : Row(
-                    children: [
-                      Expanded(
-                        child: FontSearch(
-                          onSearchTextChanged: onSearchTextChanged,
-                        ),
-                      ),
-                    ],
-                  ),
+            child: FontSearch(
+              onSearchTextChanged: onSearchTextChanged,
+            ),
           ),
+          const SizedBox(height: 8.0),
           FontPreview(
             fontFamily: _selectedFontFamily ?? 'Roboto',
             fontWeight: _selectedFontWeight,

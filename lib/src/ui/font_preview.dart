@@ -26,6 +26,7 @@ class FontPreview extends StatelessWidget {
         ),
         decoration: InputDecoration(
           hintText: translations.d['sampleText'],
+          isDense: true,
           hintStyle: TextStyle(
             fontSize: 14.0,
             fontStyle: fontStyle,
